@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+}
+
+.todo-item {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    padding: 24px;
+
+    box-sizing: border-box;
+    background: #181b24;
+    border: 1px solid #292e3b;
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.todo-id {
+    display: inline-flex;
+    align-items: center;
+
+    margin: 0 0 16px;
+    padding: 5px 10px;
+
+    border-radius: 999px;
+    background: #222735;
+    color: #7da8ff;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.todo-content {
+    margin: 0;
+    padding: 18px;
+
+    background: #11141b;
+    border: 1px solid #252a35;
+    border-radius: 10px;
+
+    color: #d9dee9;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 14px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    overflow-x: auto;
+
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+#todo-form {
+    width: min(600px, 100%);
+    margin: 0 auto 24px;
+
+    display: flex;
+    gap: 8px;
+}
+
+#todo-title {
+    flex: 1;
+    padding: 10px 14px;
+
+    background: #181b24;
+    border: 1px solid #292e3b;
+    border-radius: 10px;
+
+    color: #e8eaf0;
+    font-size: 14px;
+}
+
+#todo-title:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: #ffffff;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.todo-list {
+    width: min(600px, 100%);
+    margin: 0 auto;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* inside a list row, todos are compact flex rows instead of big cards */
+.todo-list .todo-item {
+    width: 100%;
+    padding: 14px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-list .todo-id {
+    margin: 0;
+}
+
+.todo-title {
+    flex: 1;
+}
+
+.todo-status {
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.todo-status.done {
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+}
+
+.todo-status.pending {
+    background: rgba(251, 191, 36, 0.12);
+    color: #fbbf24;
+}
+
+.todo-delete {
+    padding: 6px 12px;
+
+    background: transparent;
+    border: 1px solid #f87171;
+    color: #f87171;
+}
+
+.todo-delete:hover {
+    background: #f87171;
+    color: #0f1117;
+}
+
+.pagination {
+    width: min(600px, 100%);
+    margin: 24px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.page-info {
+    color: #8b93a7;
+    font-size: 14px;
+}
+
+.page-info #page-current {
+    color: #e8eaf0;
+    font-weight: 600;
+}

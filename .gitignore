@@ -1,0 +1,10 @@
+# compiled binaries
+main
+pygoserver
+
+# live database files (persistence engine)
+*.godb
+*.gotempdb
+
+# crash harness scratch
+godb-*

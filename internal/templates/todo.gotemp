@@ -1,0 +1,39 @@
+{{ extends "base.gotemp" }}
+
+{{ block "title" }}Todos{{ end }}
+
+{{ block "heading" }}My Todos{{ end }}
+
+{{ block "content" }}
+<form id="todo-form">
+    <input id="todo-title" type="text" placeholder="What needs to be done?" required> </input>
+    <button type="submit">Add</button>
+</form>
+{{ if todos }}
+<ul class="todo-list">
+    {{ for todo in todos }}
+    <li class="todo-item">
+        <span class="todo-id">{{ todo.id }}</span>
+        <span class="todo-title">{{ todo.title }}</span>
+        {{ if todo.completed }}
+        <span class="todo-status done">done</span>
+        {{ else }}
+        <span class="todo-status pending">pending</span>
+        {{ end }}
+        <button class="todo-delete" type="button">Delete</button>
+    </li>
+    {{ end }}
+</ul>
+<div class="pagination">
+    {{ if hasPrev }}
+    <button id="page-prev" type="button">Previous</button>
+    {{ end }}
+    <span class="page-info">Page <span id="page-current">{{ page }}</span> of {{ totalPages }}</span>
+    {{ if hasNext }}
+    <button id="page-next" type="button">Next</button>
+    {{ end }}
+</div>
+{{ else }}
+<p>No todos yet. Create one above!</p>
+{{ end }}
+{{ end }}
