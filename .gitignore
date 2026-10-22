@@ -1,6 +1,6 @@
-# compiled binaries
-main
-pygoserver
+# compiled binaries (repo root only — must not match cmd/pygoserver/)
+/main
+/pygoserver
 
 # live database files (persistence engine)
 *.godb
